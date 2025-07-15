@@ -1,4 +1,3 @@
-
 # NJ-ACIS-Precipitation-Scraper
 
 ## Project Overview
@@ -27,10 +26,7 @@ To run this script, you'll need Python 3.x and the `requests` library.
     cd NJ-ACIS-Precipitation-Scraper
     ```
 2.  **Install Python dependencies:**
-    It's recommended to use a virtual environment.
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: `venv\Scripts\activate`
     pip install requests
     ```
 
@@ -69,6 +65,7 @@ The script generates a CSV file named `nj_last_precipitation_data_1980_2024.csv`
 
 ## Important Notes
 
+* **ACIS API Documentation:** For detailed information on ACIS API endpoints, data elements, and usage policies, please refer to the official ACIS documentation, typically found on the [Regional Climate Centers' ACIS websites](https://www.rcc-acis.org/).
 * **API Usage:** This script interacts with a public API. While `time.sleep` is included, be mindful of excessive requests. ACIS may have rate limits or usage policies.
 * **Data Format:** The `Precip(in)` column may contain 'M' or 'T' strings for missing or trace values. You will need to handle these during subsequent data loading and analysis (e.g., converting them to `NaN` or 0 for numerical processing).
 * **Missing Coordinates:** The script includes COOP stations even if their coordinates are not available in the metadata, as long as they are in New Jersey.
